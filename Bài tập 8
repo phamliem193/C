@@ -1,3 +1,7 @@
+/*8. Viết chương trình tính tiền thuê máy dịch vụ Internet và in ra màn hình kết quả. Với dữ liệu nhập vào là giờ bắt đầu thuê (GBD), giờ kết thúc thuê (GKT), số máy thuê (SoMay).
+- Điều kiện cho dữ liệu nhập: 6<=GBD<GKT<=21. Giờ là số nguyên.
+- Đơn giá: 2500đ cho mỗi giờ máy trước 17:30 và 3000đ cho mỗi giờ máy sau 17:30.
+*/
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -23,8 +27,8 @@ int main()
             printf("\tSo may \t \t \t Thanh Toan\n");
             printf("\t   %d \t \t \t    %d",sm,tien);
          }
-         if(bd<=17 && bd>=6 && kt>=17 && kt<=21){
-            tien=(17-bd)*2500+(kt-18)*(3000+2500+3000)/2;
+         if(bd<=17 && bd>=6 && kt>17 && kt<=21){
+            tien=(17-bd)*2500+(kt-18)*3000+(2500+3000)/2;
             printf("Tien: %d\n",tien);
          }
      }
