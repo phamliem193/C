@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+/*
+9. Viết chương trình tính tiền lương ngày cho công nhân, cho biết trước giờ vào ca, giờ ra ca của mỗi người.
+Giả sử rằng:
+- Tiền trả cho mỗi giờ trước 12 giờ là 6000đ và sau 12 giờ là 7500đ.
+- Giờ vào ca sớm nhất : 6 giờ sáng và giờ ra ca trễ nhất : 18 giờ (giờ nhập vào là số nguyên)
+*/
+
+int main()
+{
+    int vao,ra,tien;
+    printf("Nhap gio vao: ");
+    scanf("%d",&vao);
+    printf("Nhap gio ra: ");
+    scanf("%d",&ra);
+    if(ra<=vao || ra<=6 || vao >=18 || vao<=6 || vao >=18){
+        return(main());
+    }else{
+        if(6<ra && ra<=12 && 6<=vao && vao<12){
+            tien=(ra-vao)*6000;
+            printf("Tien cong la: %d",tien);}
+            if(12<ra && ra<=18 && 12<=vao && vao<18){
+                tien=(ra-vao)*7500;
+                printf("Tien cong la: %d",tien);
+            }
+            if(6<=vao && vao<12 && ra<=18 && 12<ra){
+                tien=(12-vao)*6000+(ra-12)*7500;
+                printf("Tien cong la: %d",tien);
+            }
+        }
+
+    return 0;
+}
