@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+ int bd,kt,sm,tien;
+ printf("Nhap so gio bat dau: ");
+ scanf("%d",&bd);
+ printf("Nhap so gio ket thuc: ");
+ scanf("%d",&kt);
+ if(bd>=kt){
+    return(main());
+ }else{
+     printf("Nhap so may: ");
+     scanf("%d",&sm);
+     if(bd>=6 && bd <=17 && kt<=17){
+        tien=(kt-bd)*2500;
+        printf("\tSo may --------- Thanh Toan\n");
+        printf("\t   %d   ---------    %d",sm,tien);
+     }else{
+         if(bd>17 && bd <=21 && kt>17 && kt<=21){
+            tien=(kt-bd)*3000;
+            printf("\tSo may \t \t \t Thanh Toan\n");
+            printf("\t   %d \t \t \t    %d",sm,tien);
+         }
+         if(bd<=17 && bd>=6 && kt>=17 && kt<=21){
+            tien=(17-bd)*2500+(kt-18)*(3000+2500+3000)/2;
+            printf("Tien: %d\n",tien);
+         }
+     }
+ }
+    return 0;
+}
